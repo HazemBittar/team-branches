@@ -152,7 +152,7 @@ Should return: 4 (total progress days)
      
        let days=0; // set the days that will be the output
 
-	   for(i =1; i<times.length; i++){ // check for each item i in the times
+	   for(let i =1; i<times.length; i++){ // check for each item i in the times
         
 		if(times[i]>times[i-1]){ // check if new i bigger than last i item in array
 			days++;  //  increments the counter
@@ -162,19 +162,20 @@ Should return: 4 (total progress days)
      };
 ```
 ```js
+
 const chai = require("chai");
 const assert = chai.assert;
 chai.config.truncateThreshold = 0;
 
-describe("upArray()", () => {
+describe("Basic tests", () => {
   it("should handle basic tests", () => {
-    assert.deepEqual(count_proregss([4,4,6,5,3]), 1);
-    assert.deepEqual(count_proregss([8,10,11,8,7,9,9,10]), 4);
-    assert.deepEqual(count_proregss([5,5,5]), 0);
-    assert.deepEqual(count_proregss([13,15,16,16,14,12,15,17,13]), 4);
-    
+    assert.deepEqual(count_progress([3,4,3,6,3,4]), 3);
+    assert.deepEqual(count_progress([8,10,11,8,7,9,9,10]), 4);
+    assert.deepEqual(count_progress([5,5,5]), 0);
+    assert.deepEqual(count_progress([13,15,16,16,14,12,15,17,13]), 4);
   });
 });
+
 ```
 _____
 # find distinct number
